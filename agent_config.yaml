@@ -1,0 +1,9 @@
+agent_name: "MaestroTriageV1"
+llm_settings:
+  model: "gemini-1.5-pro-latest"
+  temperature: 0.1  
+  max_output_tokens: 800
+paths:
+  prompt_file: "system_prompt.md"
+  input_csv: "Tickets - Input.csv"
+  output_csv: "Tickets - Machine Summary.csv"
