@@ -2,6 +2,8 @@
 
 This project provides the foundation for an AI agent designed to triage Kinaxis Maestro support tickets. Specifically, the agent assesses whether the user who opened the ticket included all the necessary information required for a swift resolution.
 
+*If you find this project useful, please comply with the license, and drop me a message! I would love to hear how your implementation is working for you.*
+
 ## The Problem
 In application support, users frequently open tickets without providing the full context a human agent needs to investigate the issue. This creates a bottleneck:
 * **Delayed MTTR (Mean Time to Resolution):** Support agents must pause their work to request missing details, creating a frustrating "ping-pong" effect.
@@ -15,7 +17,9 @@ AI agents can instantly evaluate the completeness of incoming tickets against a 
 
 ## Project Contents
 * **System Prompt:** Contains the core instructions and the evaluation rubric. The rubric includes a section for customization and instructs the AI to output both a human-readable summary and a machine-readable JSON block. The agent categorizes tickets as `COMPLETE`, `PARTIAL`, or `INCOMPLETE`.
-* **Python Script:** Processes the machine-readable JSON output to generate a statistical report. This allows you to track metrics over time (e.g., calculating the exact percentage of `PARTIAL` tickets and identifying which specific data points users forget most often).
+* **YAML Configuration:** Technical configuration of the agent.
+* **Report Generator:** Processes the machine-readable JSON output to generate a statistical report. This allows you to track metrics over time (e.g., calculating the exact percentage of `PARTIAL` tickets and identifying which specific data points users forget most often).
+* **Main:** Orchestrator script that loads the system prompt and technical configuration, initializes a model that will process the tickets, loads the tickets, and finally runs the system prompt on them. This is a sample: at this stage, I am still working on the system prompt and report generator.
 
 ---
-*If you find this project useful, please comply with the license and drop me a message. I would love to hear how your implementation is working for you!*
+
